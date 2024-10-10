@@ -20,8 +20,19 @@ namespace StarterAssets
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
+		// add by ubk 24-10-10 
+        private void OnEnable()
+        {
+			// 트리거 종료 후 초기화
+			move = Vector2.zero;
+			look = Vector2.zero;
+			jump = false;
+			sprint = false;
+        }
+
+
 #if ENABLE_INPUT_SYSTEM
-		public void OnMove(InputValue value)
+        public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
 		}

@@ -8,8 +8,14 @@ namespace MyFps
 
     public class CEnemyTrigger : MonoBehaviour
     {
-        public GameObject theDoor;
-        public GameObject door;
+        public GameObject theDoor; // 문
+        public GameObject door; // 문 콜라이더..
+
+        public AudioSource doorBang; // 문열기 사운드
+        public AudioSource jumpScare; // 적 등장 사운드
+
+        public GameObject theRobot; // 적 
+
         private void OnTriggerEnter(Collider other)
         {
             StartCoroutine(PlaySequence());
@@ -17,10 +23,27 @@ namespace MyFps
 
         IEnumerator PlaySequence()
         {
+            // 열기 & 문 콜라이더 제거
             theDoor.GetComponent<Animator>().SetBool("IsOpen", true);
             theDoor.GetComponent<BoxCollider>().enabled=false;
             door.GetComponent<BoxCollider>().enabled = false;
-            yield return null;
+
+            // 문사운드
+            doorBang.Play();
+
+            // 에너미 활성화
+            theRobot.SetActive(true);
+
+            yield return new WaitForSeconds(1f);
+
+            // 에너미 등장
+            jumpScare.Play();
+
+
+
+
+
+           
 
             
         }

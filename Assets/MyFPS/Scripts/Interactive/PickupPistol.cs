@@ -11,6 +11,8 @@ namespace MyFps
         // ActionUI
         public GameObject realPistol;
         public GameObject arrow;
+
+        public GameObject enemyTrigger;
         #endregion
 
         
@@ -19,6 +21,9 @@ namespace MyFps
             // Action
             realPistol.SetActive(true);
             arrow.SetActive(false);
+
+            enemyTrigger.SetActive(true);
+
             Destroy(gameObject);
         }
     }

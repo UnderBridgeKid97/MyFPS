@@ -39,7 +39,8 @@ namespace MyFps
             // 에너미 등장
             jumpScare.Play();
 
-
+            // 트리거 킬
+            Destroy(this.gameObject);
 
 
 

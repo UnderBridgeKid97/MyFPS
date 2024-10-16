@@ -21,6 +21,10 @@ namespace MyFps
         #endregion
         void Start()
         {
+            // 커서 상태 설정
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             StartCoroutine(PlaySequence());
         }
 

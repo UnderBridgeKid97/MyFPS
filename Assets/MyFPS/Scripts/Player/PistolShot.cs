@@ -105,16 +105,16 @@ namespace MyFps
         {
             float maxDistance = 100f;
             RaycastHit hit;
-            bool isHit = Physics.Raycast(firePoint.position, transform.TransformDirection(Vector3.forward), out hit, maxDistance);
+            bool isHit = Physics.Raycast(firePoint.position, firePoint.TransformDirection(Vector3.forward), out hit, maxDistance);
 
             Gizmos.color = Color.red;
             if (isHit) // 레이저에 맞으면
             {
-                Gizmos.DrawRay(transform.position, firePoint.forward * hit.distance); // 히트한 오브젝트
+                Gizmos.DrawRay(firePoint.position, firePoint.forward * hit.distance); // 히트한 오브젝트
             }
             else // 레이저에 맞으게 없으면
             {
-                Gizmos.DrawRay(transform.position, firePoint.forward * maxDistance);
+                Gizmos.DrawRay(firePoint.position, firePoint.forward * maxDistance);
             }
 
 

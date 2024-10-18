@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using StarterAssets;
 
 namespace MyFps
 {
@@ -17,6 +18,7 @@ namespace MyFps
         [SerializeField]
         private string sequence = "Looks like a weapon on that table.";
 
+        public AudioSource line03;
         #endregion
 
         void Start()
@@ -33,12 +35,13 @@ namespace MyFps
         // 
         IEnumerator PlaySequence()
         {
-            // 캐릭터 비활성화
-            thePlayer.SetActive(false);
+            // 캐릭터 비활성화(플레이어 멈춤)
+            thePlayer.GetComponent<FirstPersonController>().enabled = false;
 
-            // 대사출력  "Looks like a weapon on that table."
+            // 대사출력  "Looks like a weapon on that table.", 음성출력
             textBox.gameObject.SetActive(true);
             textBox.text = sequence;
+            line03.Play();
 
             // 1초 딜레이
             yield return new WaitForSeconds(2f);
@@ -52,11 +55,13 @@ namespace MyFps
             // 초기화
             textBox.text = "";
             textBox.gameObject.SetActive(false);
-            
+            thePlayer.GetComponent<FirstPersonController>().enabled = true;
 
-            // 캐릭터 활성화
-            thePlayer.SetActive(true);
-            transform.GetComponent<BoxCollider>().enabled = false;
+
+            // 트리거 충돌체 비 활성화-킬
+            Destroy(gameObject);
+           // thePlayer.SetActive(true);
+          //  transform.GetComponent<BoxCollider>().enabled = false;
 
         }
     }

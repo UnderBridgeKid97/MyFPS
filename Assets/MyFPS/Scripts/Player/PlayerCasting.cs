@@ -13,9 +13,15 @@ namespace MyFps
     public class PlayerCasting : MonoBehaviour
     {
         #region Variable
-        public static float distanceFromTarget;
+        public static float distanceFromTarget= Mathf.Infinity; //- 시작시 커서가 문에 잇으면 e키가 보이는 버그 수정
         [SerializeField]private float toTarget; // 거리 숫자 보기
         #endregion
+
+        private void Start()
+        {
+          // 초기화 
+          //  distanceFromTarget = Mathf.Infinity;
+        }
 
         // Update is called once per frame
         void Update()

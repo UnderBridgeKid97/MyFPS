@@ -71,7 +71,7 @@ namespace MyFps
                 IDamageable damageable = hit.transform.GetComponent<IDamageable>();
                 if(damageable != null )
                 {
-                    damageable.TakeDamage(maxDistance);
+                    damageable.TakeDamage(attackDamage);
                 }
 
 

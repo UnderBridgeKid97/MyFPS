@@ -15,6 +15,7 @@ namespace Sample
         // 입력값 
         private float moveX;
         private float moveY;
+
         #endregion
         // Start is called before the first frame update
         void Start()

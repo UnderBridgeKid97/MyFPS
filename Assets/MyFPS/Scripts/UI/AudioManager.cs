@@ -124,5 +124,10 @@ namespace MyFps
 
 
         }
+        public void StopBgm()
+        {
+            Stop(bgmSound);
+        }
+
     }
 }

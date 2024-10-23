@@ -6,19 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MyFPS/Scripts/Scene/TitleScene.unity
+    path: Assets/MyFPS/Scene/TitleScene.unity
     guid: 0fa3dd4f13d53164992b63adbf862ca2
   - enabled: 1
-    path: Assets/MyFPS/Scripts/Scene/MainMenuScene.unity
+    path: Assets/MyFPS/Scene/MainMenuScene.unity
     guid: 228541b42c0c5f14c975318851d32477
   - enabled: 1
-    path: Assets/MyFPS/Scripts/Scene/MainScene01.unity
+    path: Assets/MyFPS/Scene/MainScene01.unity
     guid: 8aa221ce9547959409d4caa69a2ed155
   - enabled: 1
-    path: Assets/MyFPS/Scripts/Scene/MainScene02.unity
+    path: Assets/MyFPS/Scene/MainScene02.unity
     guid: d904bd0c1ff301549b180976b268509b
   - enabled: 1
-    path: Assets/MyFPS/Scripts/Scene/GameOverScene.unity
+    path: Assets/MyFPS/Scene/GameOverScene.unity
     guid: 4e5a6205a59ef6247a6eeaebe3c1224f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,

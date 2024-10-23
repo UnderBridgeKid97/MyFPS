@@ -14,7 +14,7 @@ namespace MyFps
         [Range(0.1f, 1f)] public float pitch;   // 재생 속도
 
         public bool loop;                       // 반복 재생 여부 
-        public bool PlayOnAwake = false;
+      //  public bool PlayOnAwake = false;
         [HideInInspector]
         public AudioSource source;              // 음원을 재생할 오디오소스 
 

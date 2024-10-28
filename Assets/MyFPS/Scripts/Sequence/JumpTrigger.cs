@@ -20,9 +20,6 @@ namespace MyFps
           
         }
 
-       
-        
-
         private void OnTriggerEnter(Collider other)
         {
             StartCoroutine(PlaySequence());

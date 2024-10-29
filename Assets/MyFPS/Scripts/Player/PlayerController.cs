@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MyFps
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IDamageable
     {
         #region
         public SceneFader fader;

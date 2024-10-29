@@ -21,7 +21,6 @@ namespace MyFps
 
         public GameObject thePlayer;
         private Animator animator;
-    
 
         // 로봇상태
         private RobotState currentState;
@@ -115,10 +114,10 @@ namespace MyFps
         {
             
             Debug.Log("플레이어에게 데미지를 준다");
-            PlayerController player = thePlayer.GetComponent<PlayerController>();
-            if(player != null)
+            IDamageable IDamageable = thePlayer.GetComponent<IDamageable>();
+            if(IDamageable != null)
             {
-                player.TakeDamage(attackDamege);
+                IDamageable.TakeDamage(attackDamege);
             }
         }
 

@@ -1,43 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace MyFps
 {
-    public class ChaseTrigger : MonoBehaviour
+    public class ChaseOutTrigger : MonoBehaviour
     {
-        #region
-
-        public Transform gunMan;
-
-        public GameObject ChaseTriggerOut; // out 트리거 
-        #endregion
+        
+        public GameObject Intrigger; 
+        public GameObject gunMan;
 
         private void OnTriggerEnter(Collider other)
         {
-            // 건맨 추격 시작 
-            if(other.tag == "Player")
+            // 건맨 GoBack
+            if (other.tag == "Player")
             {
                 if(gunMan != null)
                 {
-                    gunMan.GetComponent<Enemy>().SetState(EnemyState.E_Chase);
-
+                    gunMan.GetComponent<Enemy>().GoStartPosition();
                 }
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            // 건맨 추격 시작 
+            // 건맨 GoBack
             if (other.tag == "Player")
             {
                 this.gameObject.SetActive(false);
-
-                ChaseTriggerOut.SetActive(true);
-                
+                Intrigger.SetActive(true);
             }
+           
         }
-
-
     }
+    
 }

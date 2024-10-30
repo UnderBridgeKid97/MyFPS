@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using static Unity.Burst.Intrinsics.X86;
@@ -42,6 +43,17 @@ namespace MyFps
         private int nowWayPonit = 0;
 
         private Vector3 startPosition; // 시작지점, 타겟이 없어지면 다시 돌아갈 지점 
+
+        // 인식범위
+
+        private bool isAiming = false;
+        public bool IsAiming
+        {
+            get { return isAiming; }
+            private set { isAiming = value; }
+        }
+        [SerializeField] private float detectionRange = 20f;
+
         #endregion
 
         private void Start()
@@ -75,10 +87,22 @@ namespace MyFps
 
             // 타겟지정 
             float distance = Vector3.Distance(thePlayer.transform.position, transform.position);
+            if (detectionRange >0)
+            {
+                 IsAiming = distance <= detectionRange;
+            }
             if (distance <= attackRange)
             {
                 SetState(EnemyState.E_Attack);
             }
+            else if (detectionRange > 0)
+            {
+                if(IsAiming)
+                {
+                    SetState(EnemyState.E_Chase);
+                }
+            }
+           
 
             switch (currentState)
             {
@@ -109,10 +133,14 @@ namespace MyFps
                     break;
 
                     case EnemyState.E_Chase:
+                    if(detectionRange >0 &&!IsAiming)
+                    {
+                        GoStartPosition();
+                        return;
+                    }
                     // 플레이어의 위치를 계속 업데이트
                     agent.SetDestination(thePlayer.position);
-                        break;
-
+                    break;
             }
         }
 
@@ -120,6 +148,11 @@ namespace MyFps
         // 로봇의 상태 변경 
         public void SetState(EnemyState newState)
         {
+           
+            // 사망처리 
+            if (isDeath)
+                return;
+
             // 현재 상태 체크
             if (currentState == newState)
             {
@@ -171,6 +204,7 @@ namespace MyFps
 
         private void Die()
         {
+            SetState(EnemyState.E_Death);
             isDeath = true;
 
             Debug.Log("Enemy Death !");
@@ -178,6 +212,8 @@ namespace MyFps
 
             // 충돌체 제거
             transform.GetComponent<BoxCollider>().enabled = false;
+            // 킬
+            Destroy(this.gameObject, 3f);
         }
 
         // 다음 목표지점으로 이동
@@ -190,6 +226,23 @@ namespace MyFps
             }
             agent.SetDestination(wayPoints[nowWayPonit].position);
         }
+        // 제자리로 돌아가기
+        public void GoStartPosition()
+        {
+           
+            SetState(EnemyState.E_Walk);
+
+            nowWayPonit = 0; // 웨이포인트를 초기화해서 패트롤 첫 위치로감
+            agent.SetDestination(startPosition);
+            // agent.SetDestination(wayPoints[nowWayPonit].position); 기존 웨이포인트로 감
+            // 또는 가장 가까운 웨이포인트로 감..
+        }
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, detectionRange);
+        }
+       
 
 
     }

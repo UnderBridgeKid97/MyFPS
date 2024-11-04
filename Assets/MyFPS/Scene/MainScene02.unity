@@ -19249,7 +19249,6 @@ GameObject:
   - component: {fileID: 1274333155}
   - component: {fileID: 1274333154}
   - component: {fileID: 1274333153}
-  - component: {fileID: 1274333156}
   - component: {fileID: 1274333157}
   m_Layer: 0
   m_Name: LeftEYE
@@ -19267,12 +19266,12 @@ Transform:
   m_GameObject: {fileID: 1274333150}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.4287453, y: -3.4657507, z: -24.68459}
+  m_LocalPosition: {x: 29.431553, y: -0.05992508, z: -3.183132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 360013382}
-  m_Father: {fileID: 1515816598}
+  m_Father: {fileID: 1875584684}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1274333153
 BoxCollider:
@@ -19345,29 +19344,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274333150}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1274333156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1274333150}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eee0b8d44c33dd419e6eb9b11e05075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ActionUI: {fileID: 1166156781}
-  actionText: {fileID: 616369683}
-  action: PickUp
-  extraCross: {fileID: 1198536494}
-  puzzlekey: 1
-  puzzleUI: {fileID: 444548638}
-  itemImage: {fileID: 413234069}
-  puzzleText: {fileID: 1880089713}
-  puzzleItemGP: {fileID: 360013381}
-  itemSprite: {fileID: 21300000, guid: 9930f7e99dffb684993ddffde6e81eaf, type: 3}
-  puzzleStr: I Acquire LeftEYE
 --- !u!114 &1274333157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22107,40 +22083,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 11
   m_TargetDisplay: 0
---- !u!1 &1515816597
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1515816598}
-  m_Layer: 0
-  m_Name: EYES
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1515816598
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515816597}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.8603, y: 3.4058256, z: 21.501457}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1274333151}
-  - {fileID: 1973152156}
-  - {fileID: 1668682687}
-  m_Father: {fileID: 1875584684}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1529815512
 GameObject:
   m_ObjectHideFlags: 0
@@ -28624,13 +28566,13 @@ Transform:
   m_GameObject: {fileID: 1668682682}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -6.8447456, y: -2.8087506, z: -27.348589}
+  m_LocalPosition: {x: 30.015553, y: 0.5970751, z: -5.8471317}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 483782861}
   - {fileID: 987171001}
-  m_Father: {fileID: 1515816598}
+  m_Father: {fileID: 1875584684}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1671461987
 GameObject:
@@ -30202,8 +30144,10 @@ Transform:
   - {fileID: 779279222}
   - {fileID: 255040032}
   - {fileID: 1912009803}
-  - {fileID: 1515816598}
   - {fileID: 1897470090}
+  - {fileID: 1274333151}
+  - {fileID: 1973152156}
+  - {fileID: 1668682687}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1880089712
@@ -31584,7 +31528,6 @@ GameObject:
   - component: {fileID: 1973152155}
   - component: {fileID: 1973152154}
   - component: {fileID: 1973152153}
-  - component: {fileID: 1973152152}
   - component: {fileID: 1973152157}
   m_Layer: 0
   m_Name: RightEYE
@@ -31593,29 +31536,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1973152152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973152151}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eee0b8d44c33dd419e6eb9b11e05075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ActionUI: {fileID: 1166156781}
-  actionText: {fileID: 616369683}
-  action: PickUp
-  extraCross: {fileID: 1198536494}
-  puzzlekey: 2
-  puzzleUI: {fileID: 444548638}
-  itemImage: {fileID: 413234069}
-  puzzleText: {fileID: 1880089713}
-  puzzleItemGP: {fileID: 272415086}
-  itemSprite: {fileID: 21300000, guid: 0f875d1dd6393de4fbeb52cfbeff6f60, type: 3}
-  puzzleStr: I Acquire LeftEYE
 --- !u!65 &1973152153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31696,13 +31616,13 @@ Transform:
   m_GameObject: {fileID: 1973152151}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 20.168255, y: -2.4257505, z: 6.1834106}
+  m_LocalPosition: {x: 57.028553, y: 0.980075, z: 27.684868}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 272415090}
   - {fileID: 1867329195}
-  m_Father: {fileID: 1515816598}
+  m_Father: {fileID: 1875584684}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!114 &1973152157
 MonoBehaviour:

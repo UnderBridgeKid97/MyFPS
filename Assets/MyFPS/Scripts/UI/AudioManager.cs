@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 namespace MyFps
 {
     // 오디오를 관리하는 클래스 
-    public class AudioManager : PersistentSington<AudioManager>
+    public class AudioManager : Singleton<AudioManager>
     {
         #region Variables
 
@@ -16,8 +16,6 @@ namespace MyFps
             get { return bgmSound; }
         }
         public AudioMixer audioMixer;
-
-
         #endregion
 
         protected override void Awake()
@@ -96,7 +94,7 @@ namespace MyFps
             // 매개변수 이름과 같은 클립이 없으면
             if (sound == null)
             {
-                Debug.Log($"Cannot Find {name}");
+             //   Debug.Log($"Cannot Find {name}");
                 return;
             }
 
@@ -112,7 +110,7 @@ namespace MyFps
                 return;
             }
             // 배경음 정지
-            Stop(bgmSound);
+            StopBgm();
 
             Sound sound = null;
 
@@ -124,19 +122,14 @@ namespace MyFps
                     sound = s;
                     break;
                 }
-
-                // 매개변수 이름과 같은 클립이 없으면
-                if (sound == null)
-                {
-                    Debug.Log($"Cannot Find {name}");
-                    return;
-                }
-
-                sound.source.Play();
             }
-            
-
-
+            // 매개변수 이름과 같은 클립이 없으면
+            if (sound == null)
+            {
+                Debug.Log($"Cannot Find {name}");
+                return;
+            }
+            sound.source.Play();
         }
         public void StopBgm()
         {

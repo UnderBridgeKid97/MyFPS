@@ -21,14 +21,23 @@ namespace MyFps
         public AudioSource hurt01;     // 데미지 사운드 1
         public AudioSource hurt02;     // 데미지 사운드 2
         public AudioSource hurt03;     // 데미지 사운드 3
+
+        // 무기
+        public GameObject realPistol;
         #endregion
 
         private void Start()
         {
             // 초기화 
             currenthealth = maxhealth;
-            isDeath = false;
+
+            // 무기획득 
+            if(PlayerStats.Instance.HasGun)
+            {
+                realPistol.SetActive(true);
+            }
         }
+
         public void TakeDamage(float damage)
         {
             currenthealth -= damage;
@@ -53,6 +62,7 @@ namespace MyFps
         IEnumerator DamageEffect()
         {
             damageFlash.SetActive(true);
+            CinemachineShake.Instance.ShakeCamera(1f, 1f);
 
             int randNumber = Random.Range(1, 4);
             if(randNumber == 1)

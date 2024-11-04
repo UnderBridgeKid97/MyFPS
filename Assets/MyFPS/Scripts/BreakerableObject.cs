@@ -16,7 +16,6 @@ namespace MyFps
         public GameObject hiddenItem;  // 숨겨진 오브젝트
 
         private bool isBreak = false; // 중복 깨짐 방지
-
        [SerializeField]private bool unBreakable = false;   // true = 깨지지않음
         #endregion
 
@@ -41,7 +40,7 @@ namespace MyFps
         {
            isBreak = true;
 
-            this.GetComponent<Collider>().enabled = false;
+            this.GetComponent<BoxCollider>().enabled = false;
 
             fakeObject.SetActive(false);
 

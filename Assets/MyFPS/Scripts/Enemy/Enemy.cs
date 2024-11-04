@@ -94,6 +94,7 @@ namespace MyFps
             if (distance <= attackRange)
             {
                 SetState(EnemyState.E_Attack);
+                agent.SetDestination(this.transform.position);
             }
             else if (detectionRange > 0)
             {

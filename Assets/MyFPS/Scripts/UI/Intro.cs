@@ -15,7 +15,7 @@ namespace MyFps
 
         // 0.08
         public CinemachineDollyCart cart;
-        [SerializeField]private bool[] isAaarive;
+        private bool[] isAaarive;
         [SerializeField] private int wayPointIndex = 0; // 이동 목표지점 웨이포인트
 
         // 인트로 연출 애니메이션
@@ -31,7 +31,7 @@ namespace MyFps
             wayPointIndex = 0;
             isAaarive = new bool[5];
 
-            //
+            // 인트로 시작
             StartCoroutine(StartIntro());
         }
 
@@ -46,7 +46,6 @@ namespace MyFps
                 {
                     // 마지막 지점 연출
                     StartCoroutine(EndIntro());
-
 
                 }
                 else

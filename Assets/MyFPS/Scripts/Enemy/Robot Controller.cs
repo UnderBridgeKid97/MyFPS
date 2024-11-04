@@ -144,7 +144,7 @@ namespace MyFps
         public void TakeDamage(float damage)
         {
             currenthealth -= damage;
-            Debug.Log($"Remain Heath:{currenthealth}");
+         //   Debug.Log($"Remain Heath:{currenthealth}");
             if(currenthealth <= 0 && !isDeath )
             {
                 Die();
@@ -156,7 +156,7 @@ namespace MyFps
         {
             isDeath = true;
 
-            Debug.Log("Robot Death !");
+        //    Debug.Log("Robot Death !");
             SetState(RobotState.R_Death);
 
             // 배경음 변경

@@ -18,19 +18,29 @@ namespace MyFps
         public GameObject mainMenuUI;
         public GameObject optionsUI;
         public GameObject creditUI;
+        public GameObject loadGameButton;
 
         // audio
         public AudioMixer audioMixer;
         public Slider bgmSlider;
         public Slider sfxSlider;
 
+        // 저장되어 있는 씬번호
+       // private int sceneNumber;
+
         #endregion
 
         private void Start()
         {
-            // 게임 저장데이터, 저장된 옵션값 불러오기
-            LoadOptions();
+            // 게임데이터 초기화
+            InitGameData();
 
+         //   int SceneNumber = PlayerPrefs.GetInt("PlayScene",0); // 0은 저장값이 없을때 
+          //  Debug.Log($"로드  SceneNumber:{SceneNumber}");
+            if(PlayerStats.Instance.SceneNumber >0) // 저장된 값(씬)이 있으면
+            {
+                loadGameButton.SetActive(true);
+            }
 
             // 씬페이드 효과
             fader.FromFade();
@@ -43,31 +53,50 @@ namespace MyFps
            
         }
 
+        private void InitGameData()
+        {
+            // 게임설정값: 저장된 옵션값 불러오기
+            LoadOptions();
+
+            //  게임 플레이 데이터 로드
+            PlayData playData = SaveLoad.LoadData();
+            PlayerStats.Instance.playerstatInit(playData);
+           
+        }
+
+
         public void newGame()
         {
+            // 게임 데이터 초기화
+            PlayerStats.Instance.playerstatInit(null);
+
             audioManager.Stop(audioManager.BgmSound);
             audioManager.Play("MenuButton");
 
             fader.FadeTo(loadToScene);
 
-            Debug.Log("new game");
+         //   Debug.Log("new game");
         }
 
         public void loadGame()
         {
             //   fader.FadeTo(loadToScene);
+            audioManager.Stop(audioManager.BgmSound);
+            audioManager.Play("MenuButton");
 
-            Debug.Log("go to loadGame");
+            fader.FadeTo(PlayerStats.Instance.SceneNumber);
+
+         //   Debug.Log($"go to loadGame{sceneNumber}번 씬");
         }
         public void options()
         {
-            audioManager.Play("MeinButton");
+            audioManager.Play("MenuButton");
             Showoptions();
         }
 
         private void Showoptions()
         {
-         audioManager.Play("MeinButton");
+         audioManager.Play("MenuButton");
          mainMenuUI.SetActive(false);
          optionsUI.SetActive(true);
           
@@ -90,7 +119,8 @@ namespace MyFps
         public void quitgame()
         {
             // cheating
-         //   PlayerPrefs.DeleteAll();
+        //    PlayerPrefs.DeleteAll();
+         //   SaveLoad.DeleteFile();
 
 
             Debug.Log("QUIT GAME");
@@ -120,7 +150,7 @@ namespace MyFps
         {
             // 배경음 볼륨
             float bgmVolume = PlayerPrefs.GetFloat("BgmVolume",0);
-            Debug.Log($"bgmVloume:{bgmVolume}");
+           // Debug.Log($"bgmVloume:{bgmVolume}");
             SetBgmVolume (bgmVolume);   // 사운드 볼륨 조절
             bgmSlider.value = bgmVolume; // 옵션UI의 bgm 슬라이더 값 조절
 

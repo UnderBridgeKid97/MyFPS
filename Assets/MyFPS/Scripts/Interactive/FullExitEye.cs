@@ -41,8 +41,6 @@ namespace MyFps
             emrtypicture.SetActive(false);
             fullpicture.SetActive(true);
 
-            yield return new WaitForSeconds(1f);
-
             // 출구 열리기
             animator.SetBool("IsOpen",true);
             yield return new WaitForSeconds(0.5f);

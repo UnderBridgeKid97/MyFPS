@@ -37,7 +37,7 @@ namespace MyFps
         IEnumerator LockedDoor()
         {
             unInteractive = true; // 인터렉티브 기능 정지
-            AudioManager.Instance.Play("DoorLock");
+            AudioManager.Instance.Play("DoorLocked");
           
             yield return new WaitForSeconds(1f);
 

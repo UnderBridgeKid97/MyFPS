@@ -306,7 +306,6 @@ MonoBehaviour:
   fader: {fileID: 1986853005}
   loadToScene: MainScene01
   cart: {fileID: 1798169665}
-  isAaarive: 
   wayPointIndex: 0
   cameraAnim: {fileID: 1668654624}
   introUI: {fileID: 1394937215}
@@ -10778,17 +10777,47 @@ PrefabInstance:
     - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
         type: 3}
       propertyPath: sounds.Array.size
-      value: 4
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
+        type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a7dd44a1cb94cb84a9c1887be718b539, type: 3}
+    - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
+        type: 3}
+      propertyPath: sounds.Array.data[0].loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
         type: 3}
       propertyPath: sounds.Array.data[0].name
-      value: MenuBGM
+      value: MenuBgm
       objectReference: {fileID: 0}
     - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
         type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 15b2dc1a92abe93469ddcee298f2c5eb, type: 3}
+    - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
+        type: 3}
       propertyPath: sounds.Array.data[1].name
-      value: MainButton
+      value: MenuButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
+        type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 91386215cae0bb44b8c8a28a129f9db4, type: 3}
+    - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
+        type: 3}
+      propertyPath: sounds.Array.data[2].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
+        type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: IntroBgm
       objectReference: {fileID: 0}
     - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
         type: 3}
@@ -10807,7 +10836,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
         type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
+        type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
+        type: 3}
       propertyPath: sounds.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
+        type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
+        type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2449978849808272273, guid: e47ed4e840af7ac449bee5158c9fef82,
